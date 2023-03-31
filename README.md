@@ -18,3 +18,6 @@ As seguintes dependências no arquivo pubspec.yaml:
 * cupertino_icons: ^1.0.2
 * google_fonts: ^4.0.3
 * test: ^1.22.0
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
