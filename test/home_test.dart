@@ -1,41 +1,27 @@
 import 'package:calculadora_imc_teste_3/home.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
 
-  group("Wight Controller Test", () {
+  group("Calculate imc test", () {
 
-    // Teste para título da AppBar
-    testWidgets("TitleTest", (tester) async{
-      await tester.pumpWidget(MaterialApp(
-        home: Home(),
-      ));
-      expect(find.text("Calculadora de IMC"), findsOneWidget);
+    // Teste para resultado vazio
+    test("Test null", () {
+      final imc = Home();
+      expect(imc.imc, "");
     });
 
-    // Teste para texto "Calcular"
-    testWidgets("BottonTest", (tester) async{
-      await tester.pumpWidget(MaterialApp(
-        home: Home(),
-      ));
-      expect(find.text("Calcular"), findsOneWidget);
+    // Teste para achar o peso padrão
+    test("Test peso padrão", () {
+      final imc = Home();
+      expect(imc.weight, 100);
     });
 
-    // Teste para texto "Altura (cm)"
-    testWidgets("TextFormFieldAlturaTest", (tester) async{
-      await tester.pumpWidget(MaterialApp(
-        home: Home(),
-      ));
-      expect(find.text("Altura (cm)"), findsOneWidget);
+    // Teste para achar a altura padrão
+    test("Test altura padrão", () {
+      final imc = Home();
+      expect(imc.height, 170);
     });
 
-    // Teste para texto "Peso (kg)"
-    testWidgets("TextFormFieldPesoTest", (tester) async{
-      await tester.pumpWidget(MaterialApp(
-        home: Home(),
-      ));
-      expect(find.text("Peso (kg)"), findsOneWidget);
-    });
   });
 }
